@@ -6,7 +6,8 @@ const Pagination = ({
     currentPage,
     perPage,
     setNextPage,
-    setPreviousPage
+    setPreviousPage,
+    setTagsPerPage
 }) => {
     const recordsFrom = useMemo(() => {
         return currentPage * perPage - perPage + 1;
@@ -22,6 +23,10 @@ const Pagination = ({
         return to;
     });
 
+    const handlePerPageChange = event => {
+        setTagsPerPage(event.target.value);
+    };
+
     return (
         <div
             className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mr-8 ml-8 rounded"
@@ -35,6 +40,13 @@ const Pagination = ({
                 </p>
             </div>
             <div className="flex flex-1 justify-between sm:justify-end">
+                <div className="rounded border px-3 py-2 mr-2">
+                    <select onChange={handlePerPageChange}>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
                 <button
                     onClick={setPreviousPage}
                     className="relative inline-flex items-center rounded-md border border-gray-300 bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
@@ -57,7 +69,8 @@ Pagination.propTypes = {
     perPage: PropTypes.number,
     total: PropTypes.number,
     setNextPage: PropTypes.func,
-    setPreviousPage: PropTypes.func
+    setPreviousPage: PropTypes.func,
+    setTagsPerPage: PropTypes.func
 };
 
 export default Pagination;
