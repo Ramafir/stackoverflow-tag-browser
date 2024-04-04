@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import TagsList from '@/components/TagsList';
 import Pagination from '@/components/Pagination';
-import SortControls from '@/components/SortControl';
+import SortControls from '@/components/SortControls';
 import {
     setPage,
     index,

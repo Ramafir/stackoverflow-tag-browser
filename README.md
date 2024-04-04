@@ -16,13 +16,13 @@ Follow steps listed below for installation.
 ### Install pre-commit
 
 -   Go to root project directory
--   Install NPM dependencies: `npm i`
+-   Install NPM dependencies and start Application: ``npm run ci``
 
 ## Run
 
 ### Frontend app
 
-You can run app with `npm run start` or `npm run ci`
+You can run app with `npm run start`
 
 ### Storybook
 
