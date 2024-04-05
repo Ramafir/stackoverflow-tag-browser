@@ -19,6 +19,7 @@ export const index = createAsyncThunk(
             const { data } = await axios.get(
                 `https://api.stackexchange.com/2.3/tags?page=${page}&order=${orderBy}&pagesize=${tagsPerPage}&sort=${sortBy}&site=stackoverflow`
             );
+            console.log(data)
             return { data, page };
         } catch (err) {
             console.error(err);
